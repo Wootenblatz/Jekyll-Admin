@@ -1,7 +1,22 @@
 ---
 Jekyll Admin: By Zach Karpinski <zkarpinski [at] gmail [dot] com>
 
-This software assumes several conditions are met:
+LICENSE:
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+---
+
+Jekyll Admin assumes several conditions are met:
 1. You have a functioning Jekyll blog already configured
 2. You are placing Jekyll Admin into the RAILS_ROOT of a functioning Rails application.
 3. You want to save your posts in HTML format.
@@ -35,3 +50,10 @@ git clone http://github.com/zkarpinski/Jekyll-Admin.git
 rm -rf Jekyll-Admin/.git
 rm Jekyll-Admin/.gitignore
 cp -R Jekyll-Admin/* /my/web/site.com/
+
+Credits:
+I originally created JekyllAdmin for the backend of http://changethis.com/.  Change This is operated 
+hosted by my employer 800-CEO-READ (http://800ceoread.com).  Change This is a great place to get out 
+your ideas and challenge the status quo, no matter what you opinion is.  800-CEO-READ is a great place
+to order bulk business books.  When you need 20 or more copies of a book somewhere on a certain date,
+they can do it.  Even if that "somewhere" is more than one place.
