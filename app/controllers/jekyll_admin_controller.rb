@@ -1,6 +1,6 @@
 class JekyllAdminController < ApplicationController
   before_filter :load_configs
-  layout "wide"
+
   def index
     @posts = JekyllAdmin.all
   end
