@@ -28,7 +28,7 @@ class JekyllAdmin
       body = content[($1.size + $2.size)..-1]
     end
     if content and content.size > 0
-      YAML::load(content) do |key,value|
+      YAML::load(ERB.new(content).result(binding)).symbolize_keys.each do |key,value|
         obj.send("#{key}=",value)
       end
     end
