@@ -45,8 +45,11 @@ http://github.com/zkarpinski/Jekyll-Admin
 INSTALLATION:
 I recommend copying these files into your existing rails app by hand.
 
-Download from git:
+Download from git
 git clone http://github.com/zkarpinski/Jekyll-Admin.git
+OR
+wget http://github.com/downloads/zkarpinski/Jekyll-Admin/Jekyll-Admin.zip; unzip -a Jekyll-Admin.zip
+
 rm -rf Jekyll-Admin/.git
 rm Jekyll-Admin/.gitignore
 cp -R Jekyll-Admin/* /my/web/site.com/
