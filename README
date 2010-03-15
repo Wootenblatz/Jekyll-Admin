@@ -26,3 +26,12 @@ Jekyll Admin currently assumes all files are going to be stored with html markdo
 
 You can find Jekyll Admin updates on Git Hub:
 http://github.com/zkarpinski/Jekyll-Admin
+
+INSTALLATION:
+I recommend copying these files into your existing rails app by hand.
+
+Download from git:
+git clone http://github.com/zkarpinski/Jekyll-Admin.git
+rm -rf Jekyll-Admin/.git
+rm Jekyll-Admin/.gitignore
+cp -R Jekyll-Admin/* /my/web/site.com/
