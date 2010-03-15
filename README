@@ -52,7 +52,7 @@ rm Jekyll-Admin/.gitignore
 cp -R Jekyll-Admin/* /my/web/site.com/
 
 Credits:
-I originally created JekyllAdmin for the backend of http://changethis.com/.  Change This is operated 
+I originally created JekyllAdmin for the backend of http://changethis.com/.  Change This is operated and
 hosted by my employer 800-CEO-READ (http://800ceoread.com).  Change This is a great place to get out 
 your ideas and challenge the status quo, no matter what you opinion is.  800-CEO-READ is a great place
 to order bulk business books.  When you need 20 or more copies of a book somewhere on a certain date,
