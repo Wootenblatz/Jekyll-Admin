@@ -28,7 +28,7 @@ class JekyllAdmin
       body = content[($1.size + $2.size)..-1]
     end
     if content and content.size > 0
-      YAML::load(ERB.new(content).result(binding)).symbolize_keys.each do |key,value|
+      YAML::load(content) do |key,value|
         obj.send("#{key}=",value)
       end
     end
@@ -50,7 +50,14 @@ class JekyllAdmin
     file.puts("---")
     JekyllAdmin.post_template.each do |key,value|
       if not @excluded_keys.include?(key.to_s)
-        file.puts("#{key}: #{@data[key].gsub(/:/,"\:")}")
+        # Strip newlines from yaml value
+        @data[key].gsub!(/\n/m," ")
+        
+        # Colons that appear in text (ie, not with numbers in front of them) make yaml sad.  Lets convert these
+        @data[key].gsub!(/:\/\//,"&#58;//") # http://urls.com
+        @data[key].gsub!(/: /,"&#58; ") # Normal text: like this
+        @data[key].gsub!(/ : /," &#58; ") # Floating : colon
+        file.puts("#{key}: #{@data[key]}")
       end
     end
     file.puts("---")
@@ -106,7 +113,7 @@ class JekyllAdmin
     admin_config = JekyllAdmin.admin_config
     Dir.chdir(File.join(Rails.root,admin_config["relative_blog_path"]))
     system("#{admin_config["jekyll_bin_path"]}")
-    if admin_config["post_publish_commands"].size > 0
+    if admin_config["post_publish_commands"] and admin_config["post_publish_commands"].size > 0
       Dir.chdir(Rails.root)
       system("#{admin_config["post_publish_commands"]}")
       sleep 1
