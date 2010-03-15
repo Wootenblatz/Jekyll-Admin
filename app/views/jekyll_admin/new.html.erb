@@ -1,0 +1,9 @@
+<h3>New Blog Post</h3>
+<br/>
+<% form_for :jekyll, :url => { :action => "new" } do |f| %>
+	<p>
+	Day to run this post:<br/>
+	<%= f.date_select :date, :order => [:month,:day,:year]%>
+	</p>
+	<%= render :partial => "form", :locals => { :f => f } %>
+<% end %>

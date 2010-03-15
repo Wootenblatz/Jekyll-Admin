@@ -1,0 +1,10 @@
+<div>
+	<b><%= post.title %></b> 
+	<div style="float: right">
+	<%= link_to "Edit", {:action => "edit", :id => post.id} %> | 
+	<%= link_to "Remove", {:action => "destroy", :id => post.id} %>
+	</div>
+	<br/>
+	Posted by <%= post.author %> on <%= ap_date_time(post.start_at) %>
+</div>
+<br/>

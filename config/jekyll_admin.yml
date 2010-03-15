@@ -1,0 +1,36 @@
+# Path to the Jekyll binary
+jekyll_bin_path: /opt/ruby-enterprise/bin/jekyll
+
+# The rails root relative path to your blog (for loading Jekyll's _config.yml)
+relative_blog_path: blog
+
+# List of system commands that should be executed after your blog is published.  
+# *** Be careful here, you can issue commands that break your system ***
+post_publish_commands: cp public/blog/latest_posts.html app/views/shared/_latest_posts.html
+
+# Order the fields should appear on the editing form - Use the fields from _your_ blog template
+field_display_order: title, author, teaser, time, body, layout
+
+# Defines which fields are required on the blog form
+required_fields: author, title, teaser, time, layout, body
+
+# Define a regular expression for each field you wish to verify the format of
+# Note: Some aspects of a regular express seem to be invalid in a YAML file.  
+# For instance instead of (\d{1,2}) you should use (\d|\d\d)
+field_format_time: ^(\d|\d\d):(\d|\d\d) (am|pm|a.m.|p.m.)$,Must be in format HH&#58;MM am/pm
+
+# Comma separated list of valid IP addresses that can use the Jekyll Admin system.  
+# *** Omit comma for single entry.
+ip_address_restriction: 10.15.30.
+
+# If you use layouts, change "default" to whatever your post layout is.
+default_post_layout: default
+
+# If you want Jekyll Admin to automatically maintain includes above and below your body text 
+# edit the appropriate field. The system will automatically place the values below between {%  and %}. 
+# Leave blank if you do not have includes in your posts.
+#
+# Note:  These includes are automatically stripped out prior to editing.  
+#        They are also inserted just before changes are saved.
+content_top: include post_header.html
+content_bottom: include comments.html

@@ -1,0 +1,28 @@
+---
+Jekyll Admin: By Zach Karpinski <zkarpinski [at] gmail [dot] com>
+
+This software assumes several conditions are met:
+1. You have a functioning Jekyll blog already configured
+2. You are placing Jekyll Admin into the RAILS_ROOT of a functioning Rails application.
+3. You want to save your posts in HTML format.
+
+Configuration is done through two YAML files:
+- config/jekyll_admin.yml 
+- config/jekyll_admin_post_template.yml
+
+Start by editing jekyll_admin.yml.  There are comments above each configuration option.
+Jekyll Admin assumes your relative_blog_path is a standard Jekyll configuration.  
+This means that the Jekyll configuration file is named _config.yml and that your posts are
+all in the _posts directory.  
+
+Due to the nature of jekyll rb, every blog can be different.  I've done my best to make sure
+whatever fields you use can be edited with Jekyll Admin.  There are some reserved words that
+will not be written to your post file even if you put them in the jekyll_admin_post_template.
+They are "filename" and "body".  Filename is used internally for the filename of the post.  
+Body is used to hold the text/html of your post until it is published.  Do not use either of 
+these variables when creating any templates for your posts.
+
+Jekyll Admin currently assumes all files are going to be stored with html markdown.  
+
+You can find Jekyll Admin updates on Git Hub:
+http://github.com/zkarpinski/Jekyll-Admin

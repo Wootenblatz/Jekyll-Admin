@@ -1,0 +1,4 @@
+<h3>Blog Posts</h3>
+<p><%= link_to "New entry", :action => "new" %></p>
+<%= render :partial => "post", :collection => @posts.sort { |a,b| b.start_at <=> a.start_at} %>
+

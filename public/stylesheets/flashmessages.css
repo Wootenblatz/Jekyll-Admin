@@ -1,0 +1,44 @@
+#flashnotice, #flasherror {
+	width: 94%;
+	height: auto;
+	display: block;
+	overflow: visible;
+	padding: 4px;	
+	text-align: left;
+	vertical-align: middle;
+	text-align: left;
+	font-weight: bold;
+	font-size: 1.2em;
+	line-height: 1.4em;
+	letter-spacing: 0em;
+	color: #fff;
+	margin: 0;
+	padding: 10px 5px 5px 40px;
+}
+
+#flashcart {
+	width: auto;
+	height: 16px;
+	float: left;
+	display: block;
+	overflow: hidden;
+	padding: 0px 2px 0px 2px;	
+	margin: 0px 10px 0px 0px;
+	text-align: left;
+	vertical-align: middle;
+	color: #fff;
+	background-color: #090;	
+	border: 2px #0b0 solid;
+}
+
+#flashnotice {
+	background: url(/images/ok.png) no-repeat 4px 4px;	
+	border: 2px #0a0 solid;
+	background-color: #4EEE3E;	
+}
+
+#flasherror {
+	border: 2px #a00 solid;
+	background: url(/images/cancel.png) no-repeat 4px 4px;
+	background-color: #c00;
+}

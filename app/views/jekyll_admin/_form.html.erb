@@ -1,0 +1,22 @@
+<link href="/stylesheets/jHtmlArea.css" media="screen, projection" rel="stylesheet" type="text/css" /> 
+<script src="http://cdn.jquerytools.org/1.1.2/full/jquery.tools.min.js"></script> 
+<script src="/javascripts/jHtmlArea-0.7.0.min.js" type="text/javascript"></script>
+
+<%= @errors ? @errors.join("<br/>") : "" %>
+<% @admin_config["field_display_order"].split(",").each do |key,value| %>
+	<% key.strip! %>
+	<p>
+		<%= key.capitalize %>:<br/>
+		<% if params[:jekyll] and params[:jekyll]["#{key}"] %>
+			<%= eval("f.#{@post_template[key]}, :value => params[:jekyll]['#{key}']") %>
+		<% else %>
+			<%= eval("f.#{@post_template[key]}") %>
+		<% end %>
+	</p>
+<% end %>
+
+<%= f.submit "Save" %> <%= link_to "Cancel", :back %>
+
+<script>
+$("textarea").htmlarea();
+</script>

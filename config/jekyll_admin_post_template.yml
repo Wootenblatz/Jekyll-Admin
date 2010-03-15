@@ -1,0 +1,11 @@
+---
+author: text_field :author, :size => 40
+title: text_field :title, :size => 40
+teaser: text_area :teaser, :rows => 3, :cols => 60
+time: text_field :time, :size => 10
+
+# Change "default" to whatever your post template usually is.
+layout: text_field :layout, :size => 10, :value => "default"
+
+body: text_area :body, :rows => 20, :cols => 80
+---

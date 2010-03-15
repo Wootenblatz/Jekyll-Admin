@@ -1,0 +1,6 @@
+<h3>Editing a Blog Post</h3>
+<br/>
+<% form_for :jekyll, @post, :url => { :action => "edit" } do |f| %>
+	<%= render :partial => "form", :locals => { :f => f } %>
+	<%= f.hidden_field "filename", :value => params[:id] %>
+<% end %>
