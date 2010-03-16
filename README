@@ -39,6 +39,12 @@ these variables when creating any templates for your posts.
 
 Jekyll Admin currently assumes all files are going to be stored with html markdown.  
 
+jHtmlArea is included with this software.  You can read more about it here:
+http://jhtmlarea.codeplex.com/
+
+If you want to remove the Wysiwyg interface simple edit app/views/jekyll_admin/_form.html.erb and
+delete the first and last three lines from the file.
+
 You can find Jekyll Admin updates on Git Hub:
 http://github.com/zkarpinski/Jekyll-Admin
 
