@@ -48,6 +48,13 @@ delete the first and last three lines from the file.
 You can find Jekyll Admin updates on Git Hub:
 http://github.com/zkarpinski/Jekyll-Admin
 
+SCREENSHOTS:
+Example of a listing of blog posts:
+http://github.com/downloads/zkarpinski/Jekyll-Admin/Screen%20shot%202010-03-16%20at%203.18.10%20PM.png
+
+Example of editing a post:
+http://github.com/downloads/zkarpinski/Jekyll-Admin/Screen%20shot%202010-03-16%20at%203.19.23%20PM.png
+
 INSTALLATION:
 I recommend copying these files into your existing rails app by hand.
 
