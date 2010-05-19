@@ -57,7 +57,7 @@ class JekyllAdmin
         @data[key].gsub!(/:\/\//,"&#58;//") # http://urls.com
         @data[key].gsub!(/: /,"&#58; ") # Normal text: like this
         @data[key].gsub!(/ : /," &#58; ") # Floating : colon
-        file.puts("#{key}: #{@data[key]}")
+        file.puts("#{key}: \"#{@data[key]}\"")
       end
     end
     file.puts("---")
