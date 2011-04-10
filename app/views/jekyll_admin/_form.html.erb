@@ -2,7 +2,7 @@
 <script src="http://cdn.jquerytools.org/1.1.2/full/jquery.tools.min.js"></script> 
 <script src="/javascripts/jHtmlArea-0.7.0.min.js" type="text/javascript"></script>
 
-<%= @errors ? @errors.join("<br/>") : "" %>
+<%= flash_messages %>
 <% @admin_config["field_display_order"].split(",").each do |key,value| %>
 	<% key.strip! %>
 	<p>
@@ -15,6 +15,6 @@
 	</p>
 <% end %>
 
-<%= f.submit "Save" %> <%= link_to "Cancel", :back %>
+<%= f.submit "Save" %> <%= link_to "Cancel", :controller => "jekyll_admin", :action => "index" %>
 
 <script>$("textarea").htmlarea();</script>
