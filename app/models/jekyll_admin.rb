@@ -101,7 +101,7 @@ class JekyllAdmin
     admin_config = JekyllAdmin.admin_config
     Dir.chdir(File.join(Rails.root,admin_config["relative_blog_path"]))
     system("#{admin_config["jekyll_bin_path"]}")
-    if admin_config["post_publish_commands"].size > 0
+    if admin_config["post_publish_commands"] and admin_config["post_publish_commands"].size > 0
       Dir.chdir(Rails.root)
       system("#{admin_config["post_publish_commands"]}")
       sleep 1
