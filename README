@@ -1,22 +1,7 @@
 ---
 Jekyll Admin: By Zach Karpinski <zkarpinski [at] gmail [dot] com>
 
-LICENSE:
-This program is free software: you can redistribute it and/or modify
-it under the terms of the GNU General Public License as published by
-the Free Software Foundation, either version 3 of the License, or
-(at your option) any later version.
-
-This program is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-GNU General Public License for more details.
-
-You should have received a copy of the GNU General Public License
-along with this program.  If not, see <http://www.gnu.org/licenses/>.
----
-
-Jekyll Admin assumes several conditions are met:
+This software assumes several conditions are met:
 1. You have a functioning Jekyll blog already configured
 2. You are placing Jekyll Admin into the RAILS_ROOT of a functioning Rails application.
 3. You want to save your posts in HTML format.
@@ -39,37 +24,14 @@ these variables when creating any templates for your posts.
 
 Jekyll Admin currently assumes all files are going to be stored with html markdown.  
 
-jHtmlArea is included with this software.  You can read more about it here:
-http://jhtmlarea.codeplex.com/
-
-If you want to remove the Wysiwyg interface simple edit app/views/jekyll_admin/_form.html.erb and
-delete the first and last three lines from the file.
-
 You can find Jekyll Admin updates on Git Hub:
 http://github.com/zkarpinski/Jekyll-Admin
-
-SCREENSHOTS:
-Example of a listing of blog posts:
-http://github.com/downloads/zkarpinski/Jekyll-Admin/Screen%20shot%202010-03-16%20at%203.18.10%20PM.png
-
-Example of editing a post:
-http://github.com/downloads/zkarpinski/Jekyll-Admin/Screen%20shot%202010-03-16%20at%203.19.23%20PM.png
 
 INSTALLATION:
 I recommend copying these files into your existing rails app by hand.
 
-Download from git
+Download from git:
 git clone http://github.com/zkarpinski/Jekyll-Admin.git
-OR
-wget http://github.com/downloads/zkarpinski/Jekyll-Admin/Jekyll-Admin.zip; unzip -a Jekyll-Admin.zip
-
 rm -rf Jekyll-Admin/.git
 rm Jekyll-Admin/.gitignore
 cp -R Jekyll-Admin/* /my/web/site.com/
-
-Credits:
-I originally created Jekyll Admin for the backend of http://changethis.com/.  Change This is operated and
-hosted by my employer 800-CEO-READ (http://800ceoread.com).  Change This is a great place to get out 
-your ideas and challenge the status quo, no matter what your opinion is.  800-CEO-READ is a great place
-to order bulk business books.  When you need 20 or more copies of a book somewhere on a certain date,
-they can do it.  Even if that "somewhere" is more than one place.

@@ -1,6 +1,6 @@
-class JekyllAdminController < ApplicationController
+class JekyllAdminController < PublicController
   before_filter :load_configs
-
+  layout "wide"
   def index
     @posts = JekyllAdmin.all
   end
@@ -27,6 +27,7 @@ class JekyllAdminController < ApplicationController
     else
       params[:id] = "#{params[:id]}.#{params[:format]}"
     end
+    
     @post = JekyllAdmin.load(params[:id])
     if request.post?
       errors = form_errors
@@ -70,6 +71,7 @@ class JekyllAdminController < ApplicationController
     end
 
     def load_configs
+      @post_template = false
       @admin_config = JekyllAdmin.admin_config
       logger.info @admin_config["ip_address_restriction"].split(",").each { |ip| ip.strip! }.inspect
       @admin_config["ip_address_restriction"].split(",").each do |ip| 

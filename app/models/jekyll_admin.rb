@@ -1,7 +1,6 @@
 class JekyllAdmin
-  #LOG = Logger.new(RAILS_ROOT + "/log/jekyll.log")
-  #LOG.level = Logger::WARN  
-  
+  LOG = Logger.new(RAILS_ROOT + "/log/jekyll.log")
+
   def initialize(values = {})
     @data = Hash.new
     values.each do |key,value|
@@ -29,7 +28,7 @@ class JekyllAdmin
     end
     if content and content.size > 0
       YAML::load(ERB.new(content).result(binding)).symbolize_keys.each do |key,value|
-        obj.send("#{key}=",value)
+        obj.send("#{key}=",value.gsub(/\"/,""))
       end
     end
     obj.body = body || ""
@@ -50,24 +49,13 @@ class JekyllAdmin
     file.puts("---")
     JekyllAdmin.post_template.each do |key,value|
       if not @excluded_keys.include?(key.to_s)
-        # Strip newlines from yaml value
-        @data[key].gsub!(/\n/m," ")
-        
-        # Colons that appear in text (ie, not with numbers in front of them) make yaml sad.  Lets convert these
-        @data[key].gsub!(/:\/\//,"&#58;//") # http://urls.com
-        @data[key].gsub!(/: /,"&#58; ") # Normal text: like this
-        @data[key].gsub!(/ : /," &#58; ") # Floating : colon
         file.puts("#{key}: \"#{@data[key]}\"")
       end
     end
     file.puts("---")
-    if JekyllAdmin.admin_config["content_top"].strip.size > 0
-      file.puts("{% " + JekyllAdmin.admin_config["content_top"] + " %}")
-    end
+    file.puts("{% " + JekyllAdmin.admin_config["content_top"] + " %}")
     file.puts(body)
-    if JekyllAdmin.admin_config["content_bottom"].strip.size > 0
-      file.puts("{% " + JekyllAdmin.admin_config["content_bottom"] + " %}")
-    end
+    file.puts("{% " + JekyllAdmin.admin_config["content_bottom"] + " %}")
     file.close
   end
   
@@ -106,14 +94,14 @@ class JekyllAdmin
   end
   
   def self.post_template
-    YAML.load_file(File.join(Rails.root, "config","jekyll_admin_post_template.yml"))
+    YAML.load_file(File.join(Rails.root,"config","jekyll_admin_post_template.yml"))
   end
   
   def self.publish
     admin_config = JekyllAdmin.admin_config
     Dir.chdir(File.join(Rails.root,admin_config["relative_blog_path"]))
     system("#{admin_config["jekyll_bin_path"]}")
-    if admin_config["post_publish_commands"] and admin_config["post_publish_commands"].size > 0
+    if admin_config["post_publish_commands"].size > 0
       Dir.chdir(Rails.root)
       system("#{admin_config["post_publish_commands"]}")
       sleep 1
