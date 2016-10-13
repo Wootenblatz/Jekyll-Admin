@@ -1,5 +1,6 @@
 ---
-Jekyll Admin: By Zach Karpinski <zkarpinski [at] gmail [dot] com>
+I have not maintained this software for a very long time.  You should probably look at this project instead:
+https://github.com/jekyll/jekyll-admin
 
 This software assumes several conditions are met:
 1. You have a functioning Jekyll blog already configured
